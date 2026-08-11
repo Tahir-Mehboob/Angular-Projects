@@ -1,0 +1,72 @@
+<p>data-binding works!</p>
+
+<table width="100">
+
+    <!-- on way data binding
+        means if input field value update 
+        nothing update the variable value 
+    -->
+
+    <!-- access variable by interpolation -->
+    
+    <tr>
+        <td> <span> {{courseName}} </span> </td>
+        <label> by interpolation"</label>
+        <td>  <input type="text" value="{{rollNo}}"> </td>
+   
+        {{isActive}}
+    </tr>
+
+     <!-- access variable by property binding -->
+
+     <tr>
+        <label> by property binding </label>
+        <td> <input type="text" [value]="rollNo" >
+        </td>
+
+        <td> 
+            <input type="text" minlength="minlength">
+        </td>
+
+        <td>
+            <span [class]="spanClassName">
+                demo Text 
+            </span>
+        </td>
+
+     </tr>
+
+     <!-- 3rd way two way data binding 
+        means if input fields value update also 
+        change the variable value
+        
+        by using ngModel
+     -->
+        <tr>
+
+        <td> 
+            <label>Two way data binding by ng Model </label>
+            <input type="text"
+              [(ngModel)]="rollNo"> 
+        </td>
+
+        <td>
+            <input type="checkbox" [(ngModel)]="isActive">
+        </td>
+
+        <td>
+            {{isActive}}
+        </td>
+
+        </tr> 
+</table>
+
+<hr>
+
+<table>
+    <tr>
+        <td>
+        </td>
+    </tr>
+
+</table>
