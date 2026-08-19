@@ -1,42 +1,44 @@
 <p>data-binding works!</p>
+<div (scroll)="onWindowSizeChange()" style="height: 500px ; overflow: scroll">
+    
+    
+    <table width="100">
 
-<table width="100">
-
-    <!-- on way data binding
+        <!-- on way data binding
         means if input field value update 
         nothing update the variable value 
     -->
 
-    <!-- access variable by interpolation -->
-    
-    <tr>
-        <td> <span> {{courseName}} </span> </td>
-        <label> by interpolation"</label>
-        <td>  <input type="text" value="{{rollNo}}"> </td>
-   
-        {{isActive}}
-    </tr>
+        <!-- access variable by interpolation -->
 
-     <!-- access variable by property binding -->
+        <tr>
+            <td> <span> {{courseName}} </span> </td>
+            <label> by interpolation"</label>
+            <td> <input type="text" value="{{rollNo}}"> </td>
 
-     <tr>
-        <label> by property binding </label>
-        <td> <input type="text" [value]="rollNo" >
-        </td>
+            {{isActive}}
+        </tr>
 
-        <td> 
-            <input type="text" minlength="minlength">
-        </td>
+        <!-- access variable by property binding -->
 
-        <td>
-            <span [class]="spanClassName">
-                demo Text 
-            </span>
-        </td>
+        <tr>
+            <label> by property binding </label>
+            <td> <input type="text" [value]="rollNo">
+            </td>
 
-     </tr>
+            <td>
+                <input type="text" minlength="minlength">
+            </td>
 
-     <!-- 3rd way two way data binding 
+            <td>
+                <span [class]="spanClassName">
+                    demo Text
+                </span>
+            </td>
+
+        </tr>
+
+        <!-- 3rd way two way data binding 
         means if input fields value update also 
         change the variable value
         
@@ -44,29 +46,39 @@
      -->
         <tr>
 
-        <td> 
-            <label>Two way data binding by ng Model </label>
-            <input type="text"
-              [(ngModel)]="rollNo"> 
-        </td>
+            <td>
+                <label>Two way data binding by ng Model </label>
+                <input type="text" [(ngModel)]="rollNo">
+            </td>
 
-        <td>
-            <input type="checkbox" [(ngModel)]="isActive">
-        </td>
+            <td>
+                <input type="checkbox" [(ngModel)]="isActive">
+            </td>
 
-        <td>
-            {{isActive}}
-        </td>
+            <td>
+                {{isActive}}
+            </td>
 
-        </tr> 
-</table>
+        </tr>
+    </table>
+    <br>
+    <hr>
 
-<hr>
+    <table style="background-color: red;" (mouseenter)="onMouseEnter()">
+        <tr>
+            <td>
+                <button (click)="showAlerts()"> Show Alerts </button>
+            </td>
 
-<table>
-    <tr>
-        <td>
-        </td>
-    </tr>
+            <td>
+                <select (change)="onCityChange()" name="" id="">
+                    <option value="">Nagpur</option>
+                    <option value="">Hyderabad</option>
+                    <option value="">Karachi</option>
+                </select>
+            </td>
 
-</table>
+        </tr>
+
+    </table>
+</div>

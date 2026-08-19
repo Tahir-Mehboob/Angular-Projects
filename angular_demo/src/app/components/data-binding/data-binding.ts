@@ -33,6 +33,27 @@ export class DataBinding {
     setTimeout(()=>{
         this.rollNo.set(786);
     },1000);
+  
+  }   // constructor end
 
+  // create a function
+  showAlerts(params?:string){
+    alert("welcome to angular 22 ")
+  }
+
+  onCityChange():void{
+    alert("city changed")
+  }
+
+  addTwoNumber(num1:number , num2:number){
+    return num1+num2;
+  }
+
+  onWindowSizeChange(){
+    console.log("hello");
+  }
+
+  onMouseEnter(){
+    console.log("mouse enter")
   }
 }
