@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-3">
+        <select [(ngModel)]="selectedCaste" class="form-select">
+            
+            <option> Cuddo Cast </option>
+            <option> Doddo Cast </option>
+            <option> Muddo Cast </option>
+            <option> other </option>
+        </select>
+    </div>
+    <div class="col-3">
+        @if(selectedCaste == 'other' ){
+            <input type="text" class="form-control" placeholder="Other">
+        }
+        @else if(selectedCaste == 'Muddo Cast'){
+                <span>Muddo Cast</span>
+        }
+        @else if(selectedCaste == 'Doddo Cast'){
+                <span>Doddo Cast</span>
+        }
+        @else if(selectedCaste == 'Cuddo Cast'){
+                <span>Cuddo Cast</span>
+        }
+        @else{
+            <span>select cast</span>
+        }
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            {{isStudentActive()}}
+        </div>
+    </div>
+
+    <hr>
+    <hr>
+
+    <div class="row">
+        <div class="col-4">
+            @if(isStudentActive() == true  ){
+                    <span class="text-success">Student is active</span>
+            }
+            @else{
+                <span class="text-danger">Student is de-Active</span>
+            }
+        
+        </div>        
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <span class="btn btn-success" (click)="changeStatus(true)">Student is active</span>
+            <span class="btn btn-danger"(click)="changeStatus(false)" >Student is de-Active</span>
+        </div>    
+    </div>
+
+</div>
